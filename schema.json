@@ -1,0 +1,28 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Indikator Trade Record",
+  "type": "object",
+  "required": ["id", "symbol", "direction", "entry_time", "entry_price", "quantity", "mode"],
+  "additionalProperties": false,
+  "properties": {
+    "id": {"type": "string", "description": "Unique trade id"},
+    "symbol": {"type": "string"},
+    "asset_class": {"type": "string", "enum": ["equity", "futures", "options", "forex", "crypto", "other"]},
+    "direction": {"type": "string", "enum": ["long", "short"]},
+    "strategy": {"type": "string"},
+    "entry_time": {"type": "string", "format": "date-time"},
+    "exit_time": {"type": ["string", "null"], "format": "date-time"},
+    "entry_price": {"type": "number"},
+    "exit_price": {"type": ["number", "null"]},
+    "stop_price": {"type": ["number", "null"]},
+    "target_price": {"type": ["number", "null"]},
+    "quantity": {"type": "number", "exclusiveMinimum": 0},
+    "risk_amount": {"type": ["number", "null"], "minimum": 0},
+    "r_multiple": {"type": ["number", "null"]},
+    "fees": {"type": ["number", "null"], "minimum": 0},
+    "result": {"type": ["string", "null"], "enum": ["win", "loss", "breakeven", "open", null]},
+    "mode": {"type": "string", "enum": ["backtest", "demo", "live"], "description": "Always label."},
+    "tags": {"type": "array", "items": {"type": "string"}},
+    "notes": {"type": "string"}
+  }
+}

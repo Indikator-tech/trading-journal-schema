@@ -1,0 +1,2 @@
+id,symbol,asset_class,direction,strategy,entry_time,exit_time,entry_price,exit_price,stop_price,target_price,quantity,risk_amount,r_multiple,fees,result,mode,tags,notes
+2026-11-01-001,NIFTY,options,long,ORB,2026-11-01T09:30:00+05:30,2026-11-01T10:05:00+05:30,100,140,80,160,50,1000,2.0,35.5,win,live,"breakout;morning","Followed the plan."
